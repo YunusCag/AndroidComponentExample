@@ -2,7 +2,7 @@
     <string name="app_name">AndroidComponentExample</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello">Hello</string>
     <string-array name="spinnerArray">
         <item>1</item>
         <item>2</item>

@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
+        app:cardElevation="6dp"
         app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.motion.widget.MotionLayout

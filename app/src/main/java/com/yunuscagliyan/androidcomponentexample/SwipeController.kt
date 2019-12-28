@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ItemTouchHelper.LEFT
 import androidx.recyclerview.widget.RecyclerView
+import com.yunuscagliyan.androidcomponentexample.adapter.NoteAdapter
 
 class SwipeController(private var adapter: NoteAdapter): ItemTouchHelper.Callback() {
 

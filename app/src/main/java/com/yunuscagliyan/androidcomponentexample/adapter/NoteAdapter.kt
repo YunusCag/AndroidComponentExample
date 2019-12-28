@@ -1,4 +1,4 @@
-package com.yunuscagliyan.androidcomponentexample
+package com.yunuscagliyan.androidcomponentexample.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yunuscagliyan.androidcomponentexample.data.Note
 import com.yunuscagliyan.androidcomponentexample.data.NoteViewModel
 import com.yunuscagliyan.androidcomponentexample.databinding.ItemOneNoteBinding
+import com.yunuscagliyan.androidcomponentexample.fragments.NoteListFragmentDirections
 
 class NoteAdapter(private var context: Context?,
                   private var viewModel: NoteViewModel):
@@ -23,7 +24,9 @@ class NoteAdapter(private var context: Context?,
         var inflatter=LayoutInflater.from(context)
         var itemBinding=ItemOneNoteBinding.inflate(inflatter,parent,false)
 
-        return NoteViewHolder(itemBinding)
+        return NoteViewHolder(
+            itemBinding
+        )
 
     }
 
@@ -58,7 +61,8 @@ class NoteAdapter(private var context: Context?,
             itemBinding.note=note
             itemBinding.executePendingBindings()
             itemBinding.root.setOnClickListener {
-                var action=NoteListFragmentDirections.actionNext()
+                var action=
+                    NoteListFragmentDirections.actionNext()
                 action.noteId=note.noteId
                 Navigation.findNavController(it).navigate(action)
 

@@ -1,4 +1,4 @@
-package com.yunuscagliyan.androidcomponentexample
+package com.yunuscagliyan.androidcomponentexample.fragments
 
 
 import android.graphics.drawable.AnimationDrawable
@@ -10,12 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
+import com.yunuscagliyan.androidcomponentexample.R
 import com.yunuscagliyan.androidcomponentexample.data.Note
 import com.yunuscagliyan.androidcomponentexample.data.NoteViewModel
 import com.yunuscagliyan.androidcomponentexample.databinding.FragmentAunoteBinding
-import com.yunuscagliyan.androidcomponentexample.databinding.ItemOneNoteBinding
 import kotlinx.android.synthetic.main.fragment_aunote.*
 
 /**
@@ -31,7 +30,8 @@ class AUNoteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        auNoteBinding=DataBindingUtil.inflate(inflater,R.layout.fragment_aunote,container,false)
+        auNoteBinding=DataBindingUtil.inflate(inflater,
+            R.layout.fragment_aunote,container,false)
         return auNoteBinding.root
     }
 
@@ -42,7 +42,10 @@ class AUNoteFragment : Fragment() {
 
         var note=Note("","",0)
         arguments.let {
-            var safeArgs=AUNoteFragmentArgs.fromBundle(it!!)
+            var safeArgs=
+                AUNoteFragmentArgs.fromBundle(
+                    it!!
+                )
             noteID=safeArgs.noteId
 
         }
